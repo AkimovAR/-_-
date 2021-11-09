@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Интерфейс Акимов", "Интерфейс Акимов\Интерфейс Акимов.csproj", "{D4014F33-16D4-4F67-82C0-34EB74F429EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4014F33-16D4-4F67-82C0-34EB74F429EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4014F33-16D4-4F67-82C0-34EB74F429EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4014F33-16D4-4F67-82C0-34EB74F429EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4014F33-16D4-4F67-82C0-34EB74F429EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDCB3D30-F49B-42A6-AA37-77C38D17A0C1}
+	EndGlobalSection
+EndGlobal
