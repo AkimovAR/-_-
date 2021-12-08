@@ -1,0 +1,39 @@
+﻿<Window x:Class="motoStore.Views.Order.ListOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:motoStore.Views.Order"
+        mc:Ignorable="d"
+        Title="ListOrder" Height="480" Width="600">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="20 8 20 8" />
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="30" />
+        </Style>
+    </Window.Resources>
+    <Grid HorizontalAlignment="Left" Height="450" Width="600" VerticalAlignment="Top">
+        <DataGrid AutoGenerateColumns="False" x:Name="ordersGrid" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Top" SelectionUnit="FullRow" HorizontalAlignment="Center" Width="600" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Id}" Header="№" Width="30"/>
+                <DataGridTextColumn Binding="{Binding Order_date}" Header="Дата заказа" Width="70"/>
+                <DataGridTextColumn Binding="{Binding Bike_code}" Header="Товар" Width="70"/>
+                <DataGridTextColumn Binding="{Binding Order_price}" Header="Стоимость" Width="70"/>
+                <DataGridTextColumn Binding="{Binding Stock_code}" Header="Запчасти" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Employee_code}" Header="Сотрудник" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Client_code}" Header="Клиент" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,381,0,0">
+            <Button x:Name="Details" Content="Отчет" Click="Details_Click" />
+            <Button x:Name="AddOrder" Content="Новый заказ" Click="AddOrder_Click" />
+
+
+        </StackPanel>
+
+    </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="\Images\back.png"/>
+    </Window.Background>
+</Window>

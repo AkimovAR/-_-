@@ -1,0 +1,38 @@
+﻿<Window x:Class="motoStore.Views.EditBike"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:motoStore.Views"
+        mc:Ignorable="d"
+        Title="EditBike" Height="450" Width="800">
+    <Window.Background>
+        <ImageBrush ImageSource="\Images\back.png"/>
+    </Window.Background>
+    <Grid>
+        <Label Content="Марка" Foreground="White" HorizontalAlignment="Left" Margin="35,28,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Модель" Foreground="White" HorizontalAlignment="Left" Margin="35,68,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Цвет" Foreground="White" HorizontalAlignment="Left" Margin="35,108,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Комплектация" Foreground="White" HorizontalAlignment="Left" Margin="35,148,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Максимальная скорость" Foreground="White" HorizontalAlignment="Left" Margin="355,152,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Тип трансмиссии" Foreground="White" HorizontalAlignment="Left" Margin="360,30,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Доступность" Foreground="White" HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Стоимость" Foreground="White" HorizontalAlignment="Left" Margin="360,108,0,0" VerticalAlignment="Top" Width="157"/>
+        <TextBox x:Name="txtBrand" HorizontalAlignment="Left" Height="23" Margin="185,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="185,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="23" Margin="185,108,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtCompl" HorizontalAlignment="Left" Height="23" Margin="185,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="526,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTransmission" HorizontalAlignment="Left" Height="23" Margin="510,30,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAviable" HorizontalAlignment="Left" Height="23" Margin="510,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="510,109,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txtPrice_TextChanged"/>
+        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="222,365,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59" Click="Button_Click"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Margin="365,365,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.933,0.59" Click="Button_Click_1"/>
+        <Button Content="Закрыть" HorizontalAlignment="Left" Margin="526,365,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59" Click="Button_Click_2"/>
+        <Label Content="Мощность" Foreground="White" HorizontalAlignment="Left" Margin="35,193,0,0" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="txtPower" HorizontalAlignment="Left" Height="23" Margin="185,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txtPower_TextChanged"/>
+        <Label Content="Крутящий момент" Foreground="White" HorizontalAlignment="Left" Margin="365,194,0,0" VerticalAlignment="Top" Width="112"/>
+        <TextBox x:Name="txtTorq" HorizontalAlignment="Left" Height="23" Margin="510,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txtTorq_TextChanged"/>
+
+    </Grid>
+</Window>

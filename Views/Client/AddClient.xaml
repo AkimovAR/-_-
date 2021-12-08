@@ -1,0 +1,28 @@
+﻿<Window x:Class="motoStore.Views.Client.AddClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:motoStore.Views.Client"
+        mc:Ignorable="d"
+        Title="AddClient" Height="235" Width="542">
+    <Grid>
+        <Label Content="Имя" Foreground="White" HorizontalAlignment="Left" Margin="14,7,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="84,11,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Фамилия" Foreground="White" HorizontalAlignment="Left" Margin="14,53,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Margin="84,57,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Телефон" Foreground="White" HorizontalAlignment="Left" Margin="14,95,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="84,99,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Адрес" Foreground="White" HorizontalAlignment="Center" Margin="0,14,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.594,0.002"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Margin="320,18,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Паспорт" Foreground="White" HorizontalAlignment="Left" Margin="246,53,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPassport" HorizontalAlignment="Left" Margin="320,57,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnAddClient" Content="Добавить" HorizontalAlignment="Left" Margin="140,173,0,0" VerticalAlignment="Top" Width="69" RenderTransformOrigin="-0.933,0.59" Click="btnAddClient_Click" />
+        <Button x:Name="Clearbtn" Content="Очистить" HorizontalAlignment="Left" Margin="232,173,0,0" VerticalAlignment="Top" Width="69" RenderTransformOrigin="-0.933,0.59" Click="Clearbtn_Click"/>
+        <Button x:Name="Closebtn" Content="Закрыть" HorizontalAlignment="Left" Margin="349,173,0,0" VerticalAlignment="Top" Width="63" RenderTransformOrigin="-0.933,0.59" Click="Closebtn_Click" />
+
+    </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="\Images\back.png"/>
+    </Window.Background>
+</Window>
