@@ -73,11 +73,11 @@ namespace motoStore.DAL
                 return false;
             }
         }
-        public bool Remove(Order model)
+        public bool Remove(int model)
         {
             try
             {
-                Order order = context.Orders.FirstOrDefault(n => n.Id == model.Id);
+                Order order = context.Orders.FirstOrDefault(n => n.Id == model);
                 context.Orders.Remove(order);
                 context.SaveChanges();
                 return true;

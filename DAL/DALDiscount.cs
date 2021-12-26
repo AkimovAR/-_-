@@ -59,11 +59,11 @@ namespace motoStore.DAL
             }
             return discount;
         }
-        public bool Remove(Discount model)
+        public bool Remove(int model)
         {
             try
             {
-                Discount discount = context.Discounts.FirstOrDefault(n => n.Id == model.Id);
+                Discount discount = context.Discounts.FirstOrDefault(n => n.Id == model);
                 context.Discounts.Remove(discount);
                 context.SaveChanges();
                 return true;

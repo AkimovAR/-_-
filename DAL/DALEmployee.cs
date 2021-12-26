@@ -57,12 +57,23 @@ namespace motoStore.DAL
             }
             return employee;
         }
-        public bool Edit(Employee model)
+        public bool Edit(Employee entity)
         {
             try
             {
-                Employee employee = context.Employees.FirstOrDefault(n => n.Id == model.Id);
-                employee = model;
+                Employee employee = context.Employees.FirstOrDefault(n => n.Id == entity.Id);
+                employee.Id = entity.Id;
+                employee.Motoshop_code = entity.Motoshop_code;
+                employee.Name = entity.Name;
+                employee.Password = entity.Password;
+                employee.Post = entity.Post;
+                employee.Salary = entity.Salary;
+                employee.Surname = entity.Surname;
+                employee.Account = entity.Account;
+                employee.Email = entity.Email;
+                employee.Empaddress = entity.Empaddress;
+                employee.Emppassport = entity.Emppassport;
+                employee.Empphonenumber = entity.Empphonenumber;
                 context.SaveChanges();
                 return true;
             }
@@ -71,11 +82,11 @@ namespace motoStore.DAL
                 return false;
             }
         }
-        public bool Remove(Employee model)
+        public bool Remove(int model)
         {
             try
             {
-                Employee employee = context.Employees.FirstOrDefault(n => n.Id == model.Id);
+                Employee employee = context.Employees.FirstOrDefault(n => n.Id == model);
                 context.Employees.Remove(employee);
                 context.SaveChanges();
                 return true;

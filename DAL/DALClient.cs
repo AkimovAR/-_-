@@ -73,11 +73,11 @@ namespace motoStore.DAL
                 return false;
             }
         }
-        public bool Remove(Client model)
+        public bool Remove(int model)
         {
             try
             {
-                Client client = context.Clients.FirstOrDefault(n => n.Id == model.Id);
+                Client client = context.Clients.FirstOrDefault(n => n.Id == model);
                 context.Clients.Remove(client);
                 context.SaveChanges();
                 return true;

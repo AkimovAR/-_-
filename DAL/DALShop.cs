@@ -75,11 +75,11 @@ namespace motoStore.DAL
             }
         }
 
-        public bool Remove(Bikeshop model)
+        public bool Remove(int model)
         {
             try
             {
-                Bikeshop shop = context.Bikeshops.FirstOrDefault(n => n.Id == model.Id);
+                Bikeshop shop = context.Bikeshops.FirstOrDefault(n => n.Id == model);
                 context.Bikeshops.Remove(shop);
                 context.SaveChanges();
                 return true;

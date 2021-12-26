@@ -40,8 +40,9 @@ namespace motoStore.DAL
                     bikes = ctx.Bikes.ToList<Bike>();
 
                 }
-                catch
+                catch(Exception ex)
                 {
+                    string str = ex.Message;
                     bikes = null;
                 }
             }
@@ -78,11 +79,11 @@ namespace motoStore.DAL
            
 
         }
-        public bool Remove(Bike model)
+        public bool Remove(int model)
         {
             try
             {
-                Bike temp = context.Bikes.FirstOrDefault(n => n.Id == model.Id);
+                Bike temp = context.Bikes.FirstOrDefault(n => n.Id == model);
                 context.Bikes.Remove(temp);
                 context.SaveChanges();
                 return true;
