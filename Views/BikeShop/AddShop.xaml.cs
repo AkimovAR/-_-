@@ -62,6 +62,12 @@ namespace motoStore.Views.BikeShop
             Bikeshop shop = new Bikeshop();
             try
             {
+                /*
+             
+             код для проверки
+             но мне влом
+             
+             */
                 string name = txtMotoshop_name.Text;
                 string address = txtAddress.Text;
                 string phone = txtPhone_number.Text;

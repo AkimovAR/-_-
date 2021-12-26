@@ -55,6 +55,7 @@ namespace motoStore.Views.BikeShop
         }
         void setValues()
         {
+            /*нужна проверка вводных значений*/
             string name = txtMotoshop_name.Text;
             string address = txtAddress.Text;
             string phone = txtPhone_number.Text;

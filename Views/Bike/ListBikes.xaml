@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:motoStore.Views"
         mc:Ignorable="d"
-        Title="ListBikes" Height="780" Width="1024">
-    <Window.Background>
-        <ImageBrush ImageSource="\Images\back.png"/>
-    </Window.Background>
+          Background="{DynamicResource MaterialDesignFlatButtonRipple}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="ListBikes" Height="352" Width="1420">
+
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20 8 20 8" />
@@ -17,26 +17,42 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <DataGrid AutoGenerateColumns="False" x:Name="bikesGrid" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1024" Height="200">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Bike_E.Bike_list}" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1410" Height="200">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="№" Width="30"/>
                 <DataGridTextColumn Binding="{Binding Brand_name}" Header="Марка" Width="110"/>
-                <DataGridTextColumn Binding="{Binding Model_namre}" Header="Модель" Width="70"/>
+                <DataGridTextColumn Binding="{Binding Model_name}" Header="Модель" Width="100"/>
                 <DataGridTextColumn Binding="{Binding Color_name}" Header="Цвет" Width="70"/>
-                <DataGridTextColumn Binding="{Binding Complectation_name}" Header="Комплектация" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Complectation_name}" Header="Комплектация" Width="130"/>
                 <DataGridTextColumn Binding="{Binding Max_speed}" Header="Максимальня скорость" Width="130"/>
-                <DataGridTextColumn Binding="{Binding Power}" Header="Мощность" Width="80"/>
-                <DataGridTextColumn Binding="{Binding Torque}" Header="Крутящий момент" Width="110"/>
-                <DataGridTextColumn Binding="{Binding Transmis_type}" Header="Транмиссия" Width="70"/>
-                <DataGridTextColumn Binding="{Binding Availability}" Header="Наличие" Width="70"/>
-                <DataGridTextColumn Binding="{Binding Price}" Header="Цена" Width="60"/>
+                <DataGridTextColumn Binding="{Binding Power}" Header="Мощность" Width="100"/>
+                <DataGridTextColumn Binding="{Binding Torque}" Header="Крутящий момент" Width="130"/>
+                <DataGridTextColumn Binding="{Binding Transmis_type}" Header="Транмиссия" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Availability}" Header="Наличие" Width="110"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена" Width="100"/>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Редактировать" CommandParameter="{Binding Path=Id}"
+                                        Command="{Binding Path=DataContext.EditCommand,RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType=Window}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Удалить"  CommandParameter="{Binding Path=Id}"
+                                        Command="{Binding Path=DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType=Window}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
-            <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" />
-            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
-            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
+            <Button  Content="Добавить" Command="{Binding AddWinCommand}" />
         </StackPanel>
-        
+
     </Grid>
 </Window>

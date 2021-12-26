@@ -1,5 +1,6 @@
 ﻿using motoStore.DAL;
 using motoStore.Models;
+using motoStore.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,69 +22,13 @@ namespace motoStore.Views
     /// </summary>
     public partial class ListBikes : Window
     {
-        DALBike dao;
         public ListBikes()
         {
             InitializeComponent();
-            dao = new DALBike();
-            bikesGrid.ItemsSource = dao.ShowALL();
+            DataContext = new VM_Bike();
 
         }
 
-        private void updateButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (bikesGrid.SelectedItems.Count > 0)
-            {
-                for (int i = 0; i < bikesGrid.SelectedItems.Count; i++)
-                {
-                    Bike bike = bikesGrid.SelectedItems[i] as Bike;
-                    if (bike != null)
-                    {
-
-                        EditBike editBike = new EditBike(bike.Id);
-                        editBike.ShowDialog();
-
-                    }
-                }
-            }
-            updateDG();
-        }
-
-        private void deleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (bikesGrid.SelectedItems.Count > 0)
-            {
-                for (int i = 0; i < bikesGrid.SelectedItems.Count; i++)
-                {
-                    Bike bike = bikesGrid.SelectedItems[i] as Bike;
-                    if (bike != null)
-                    {
-
-                        if (dao.Remove(bike))
-                        {
-                            MessageBox.Show("Запись успешно удалена");
-                        }
-                        else
-                        {
-                            MessageBox.Show("При удалении зписи возники ошибки");
-                        }
-
-                    }
-                }
-            }
-            updateDG();
-        }
-
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
-            AddBike addBike = new AddBike();
-            addBike.ShowDialog();
-            updateDG();
-        }
-        private void updateDG()
-        {
-            bikesGrid.ItemsSource = null;
-            bikesGrid.ItemsSource = dao.ShowALL();
-        }
+     
     }
 }

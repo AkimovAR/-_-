@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows;
 using motoStore.DAL;
 using motoStore.Models;
+using motoStore.ViewModels;
 
 namespace motoStore.Views
 {
@@ -28,6 +29,7 @@ namespace motoStore.Views
         public EditBike(int id)
         {
             InitializeComponent();
+            DataContext =new VM_Bike();
             dao = new DALBike();
             bike = dao.Show(id);
             initVaues();
@@ -53,7 +55,7 @@ namespace motoStore.Views
             if (bike != null)
             {
                 txtBrand.Text = bike.Brand_name;
-                txtModel.Text = bike.Model_namre;
+                txtModel.Text = bike.Model_name;
                 txtColor.Text = bike.Color_name;
                 txtCompl.Text = bike.Complectation_name;
                  txtSpeed.Text = bike.Max_speed;
@@ -67,6 +69,7 @@ namespace motoStore.Views
         }
         void SetValues()
         {
+            /*нужно проверка вводных значений*/
             string brand = txtBrand.Text;
             string model = txtModel.Text;
             string color = txtColor.Text;
@@ -80,7 +83,7 @@ namespace motoStore.Views
             decimal price = Decimal.Parse(pricestr);
 
             bike.Brand_name = brand;
-            bike.Model_namre = model;
+            bike.Model_name = model;
             bike.Color_name = color;
             bike.Complectation_name = compl;
             bike.Max_speed = speed;

@@ -53,7 +53,7 @@ namespace motoStore.Views.BikeShop
                     if (shop != null)
                     {
 
-                        if (DALShop.Remove(shop))
+                        if (DALShop.Remove(shop.Id))
                         {
                             MessageBox.Show("Запись успешно удалена");
                         }

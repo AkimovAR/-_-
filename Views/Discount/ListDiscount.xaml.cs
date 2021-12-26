@@ -39,7 +39,7 @@ namespace motoStore.Views.Discount
                     if (discount != null)
                     {
 
-                        if (dal.Remove(discount))
+                        if (dal.Remove(discount.Id))
                         {
                             MessageBox.Show("Запись успешно удалена");
                         }

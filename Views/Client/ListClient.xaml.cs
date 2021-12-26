@@ -54,7 +54,7 @@ namespace motoStore.Views.Client
                     if (client != null)
                     {
 
-                        if (dal.Remove(client))
+                        if (dal.Remove(client.Id))
                         {
                             MessageBox.Show("Запись успешно удалена");
                         }

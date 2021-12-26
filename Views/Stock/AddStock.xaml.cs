@@ -51,6 +51,12 @@ namespace motoStore.Views.Stock
             Models.Stock stock = new Models.Stock();
             try
             {
+                /*
+             
+             код для проверки
+             но мне влом
+             
+             */
                 string Stock_name = txtName.Text;
                 DateTime datepst =  datepicker.SelectedDate.Value;
                 string conditions = txtCondidtion.Text;

@@ -1,24 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using motoStore.DAL;
 using System.Text.RegularExpressions;
 
 namespace motoStore.Views.Order
 {
-    /// <summary>
-    /// Interaction logic for AddOrder.xaml
-    /// </summary>
     public partial class AddOrder : Window
     {
         DALBike dalBike;
@@ -87,8 +76,6 @@ namespace motoStore.Views.Order
             {
                 MessageBox.Show("Возникли ошибки при добавлении записи");
             }
-           
-
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -125,7 +112,7 @@ namespace motoStore.Views.Order
             {
                 foreach (var item in bikes)
                 {
-                    cmbBike.Items.Add(item.Id + " " + item.Brand_name + " " + item.Model_namre + " " + item.Price);
+                    cmbBike.Items.Add(item.Id + " " + item.Brand_name + " " + item.Model_name + " " + item.Price);
                 }
             }
         }
@@ -152,14 +139,12 @@ namespace motoStore.Views.Order
                         return res;
                     }
                 }
-                catch
-                {
-                    return -1;
-                }
-                return -1; 
+            catch
+            {
+                return -1;
+            }
+            return -1; 
            
         }
-       
-
     }
 }

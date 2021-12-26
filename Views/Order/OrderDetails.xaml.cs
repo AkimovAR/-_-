@@ -76,7 +76,7 @@ namespace motoStore.Views.Order
                     txtEmployeePhone.Text = employee.Empphonenumber;
                     txtEmployeePost.Text = employee.Post;
 
-                    txtMotoModel.Text = bike.Model_namre;
+                    txtMotoModel.Text = bike.Model_name;
                     txtMotoBrand.Text = bike.Brand_name;
                     txtMotoColor.Text = bike.Color_name;
                     txtMotoPrice.Text = bike.Price.ToString();

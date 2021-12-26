@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:motoStore.Views.Employee"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+
         mc:Ignorable="d"
-        Title="ListEmployee" Height="478" Width="982">
+        Title="ListEmployee" Height="493" Width="1347">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20 8 20 8" />
@@ -13,8 +15,8 @@
             <Setter Property="Height" Value="30" />
         </Style>
     </Window.Resources>
-    <Grid HorizontalAlignment="Left" Width="985" Height="456" VerticalAlignment="Top">
-        <DataGrid AutoGenerateColumns="False" x:Name="employeesGrid" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Top" SelectionUnit="FullRow" HorizontalAlignment="Center" Width="979" Margin="0,0,0,10">
+    <Grid HorizontalAlignment="Left" Width="1337" Height="456" VerticalAlignment="Top">
+        <DataGrid  AutoGenerateColumns="False" ItemsSource="{Binding  entity.Employee_list}"  IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Top" SelectionUnit="FullRow" HorizontalAlignment="Center" Width="1316">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="№" Width="30"/>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Имя" Width="70"/>
@@ -27,12 +29,28 @@
                 <DataGridTextColumn Binding="{Binding Password}" Header="Пароль" Width="70"/>
                 <DataGridTextColumn Binding="{Binding Salary}" Header="Зарплата" Width="70"/>
                 <DataGridTextColumn Binding="{Binding Motoshop_code}" Header="Номер магазина" Width="110"/>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Выбрать" CommandParameter="{Binding Path=Id}"
+                                        Command="{Binding Path=DataContext.EditWinCommand,RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType=Window}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Удалить"  CommandParameter="{Binding Path=Id}"
+                                        Command="{Binding Path=DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType=Window}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
-            <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click" />
-            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
-            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click"/>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,368,0,0">
+            <Button  Content="Добавить" Command="{Binding AddWinCommand}" />
         </StackPanel>
 
     </Grid>

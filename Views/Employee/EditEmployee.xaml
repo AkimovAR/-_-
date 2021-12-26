@@ -4,37 +4,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:motoStore.Views.Employee"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Background="{DynamicResource MaterialDesignFlatButtonRipple}"
+
         mc:Ignorable="d"
-        Title="EditEmployee" Height="450" Width="800">
+        Title="EditEmployee" Height="416" Width="515">
     <Grid Margin="0,0,10,9">
-        <Label Content="Имя" Foreground="White" HorizontalAlignment="Left" Margin="50,45,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="120,49,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Фамилия" Foreground="White" HorizontalAlignment="Left" Margin="50,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Margin="129,95,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Должность" Foreground="White" HorizontalAlignment="Left" Margin="50,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtPost" HorizontalAlignment="Left" Margin="129,135,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Телефон" Foreground="White" HorizontalAlignment="Left" Margin="50,173,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="129,173,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Адрес" HorizontalAlignment="Left" Margin="52,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Margin="129,204,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Паспорт" Foreground="White" HorizontalAlignment="Left" Margin="356,56,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtPassport" HorizontalAlignment="Left" Margin="427,60,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Аккаунт" Foreground="White" HorizontalAlignment="Left" Margin="356,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtAccount" HorizontalAlignment="Left" Margin="427,101,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Email" Foreground="White" HorizontalAlignment="Left" Margin="356,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="427,133,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Password" Foreground="White" HorizontalAlignment="Center" Margin="0,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="429,164,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Зарплата" Foreground="White" HorizontalAlignment="Center" Margin="0,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtSalary" HorizontalAlignment="Left" Margin="429,196,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtSalary_TextChanged"/>
-        <Label Content="Магазин" Foreground="White" HorizontalAlignment="Left" Margin="364,228,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <ComboBox x:Name="Shoplist" HorizontalAlignment="Left" Margin="429,230,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnSave"  Content="Сохранить" HorizontalAlignment="Left" Margin="96,280,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59" Click="btnSave_Click" />
-        <Button x:Name="btnClear" Content="Очистить" HorizontalAlignment="Left" Margin="239,280,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.933,0.59" Click="btnClear_Click" />
-        <Button x:Name="btnClose" Content="Закрыть" HorizontalAlignment="Left" Margin="400,280,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59" Click="btnClose_Click" />
+        <Label Content="Имя"  HorizontalAlignment="Left" Margin="35,18,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="88,17,0,0" Text="{Binding entity.Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Фамилия"  HorizontalAlignment="Left" Margin="18,59,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Margin="97,63,0,0" Text="{Binding entity.Surname}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Должность"  HorizontalAlignment="Left" Margin="16,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtPost" HorizontalAlignment="Left" Margin="97,103,0,0" Text="{Binding entity.Post}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Телефон"  HorizontalAlignment="Left" Margin="30,137,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="97,141,0,0" Text="{Binding entity.Empphonenumber}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="30,170,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Margin="97,172,0,0" Text="{Binding entity.Empaddress}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Паспорт"  HorizontalAlignment="Left" Margin="270,20,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtPassport" HorizontalAlignment="Left" Margin="341,19,0,0" Text="{Binding entity.Emppassport}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Аккаунт" HorizontalAlignment="Left" Margin="270,61,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtAccount" HorizontalAlignment="Left" Margin="341,60,0,0" Text="{Binding entity.Account}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Email"  HorizontalAlignment="Left" Margin="276,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="341,92,0,0" Text="{Binding entity.Email}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Password"  HorizontalAlignment="Left" Margin="275,127,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="343,128,0,0" Text="{Binding entity.Password}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Зарплата"  HorizontalAlignment="Left" Margin="270,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtSalary" HorizontalAlignment="Left" Margin="343,160,0,0" Text="{Binding entity.Salary}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <Label Content="Магазин"  HorizontalAlignment="Left" Margin="273,195,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBlock HorizontalAlignment="Left" Margin="352,199,0,0" Text="{Binding entity.Motoshop_name}" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="btnAdd" Command="{Binding SaveCommand}" Content="Сохранить" HorizontalAlignment="Left" Margin="35,280,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59"/>
+        <Button x:Name="btnClear" Command="{Binding ResetComman}" Content="Очистить" HorizontalAlignment="Left" Margin="187,280,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.933,0.59"/>
+
+        <materialDesign:Chip Command="{Binding SelectShopCommand}" Content="Выбрать магазин" Margin="335,228,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="352,335,0,0" Text="{Binding entity.Motoshop_name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
-    <Window.Background>
-        <ImageBrush ImageSource="\Images\back.png"/>
-    </Window.Background>
+
 </Window>
