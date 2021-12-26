@@ -10,7 +10,7 @@ namespace motoStore.Models
     {
         public int Id { get; set; }
         public string Brand_name { get; set; }
-        public string Model_namre { get; set; }
+        public string Model_name { get; set; }
         public string Color_name { get; set; }
         public string Complectation_name { get; set; }
         public string Max_speed { get; set; }
