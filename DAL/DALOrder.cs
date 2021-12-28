@@ -38,8 +38,9 @@ namespace motoStore.DAL
                 {
                     orders = ctx.Orders.ToList<Order>();
                 }
-                catch
+                catch(Exception ex)
                 {
+                    string str = ex.Message;
                     orders = null;
                 }
             }

@@ -1,8 +1,10 @@
-﻿using System.Collections.ObjectModel;
+﻿using motoStore.ViewModels;
+using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+
 namespace motoStore.Entities
 {
-   public class Employee_E :E_Notifier
+    class Employee_E : Notify
     {
         private int id;
         public int Id
@@ -21,6 +23,8 @@ namespace motoStore.Entities
             set
             {
                 name = value;
+                OnPropertyChanged("Name");
+
 
             }
         }
@@ -44,7 +48,9 @@ namespace motoStore.Entities
         public string Empphonenumber
         {
             get { return empphonenumber; }
-            set { empphonenumber = value;
+            set 
+            { 
+                empphonenumber = value;
                 OnPropertyChanged("Empphonenumber");
             }
         }
@@ -52,7 +58,9 @@ namespace motoStore.Entities
         public string Empaddress
         {
             get { return empaddress; }
-            set { empaddress = value;
+            set 
+            { 
+                empaddress = value;
                 OnPropertyChanged("Empaddress");
             }
         }
@@ -60,7 +68,9 @@ namespace motoStore.Entities
         public string Emppassport
         {
             get { return emppassport; }
-            set { emppassport = value;
+            set 
+            {
+                emppassport = value;
                 OnPropertyChanged("Emppassport");
             }
         }
@@ -78,7 +88,9 @@ namespace motoStore.Entities
         public string Email
         {
             get { return email; }
-            set { email = value;
+            set 
+            { 
+                email = value;
                 OnPropertyChanged("Email");
             }
         }
@@ -86,7 +98,9 @@ namespace motoStore.Entities
         public string Password
         {
             get { return password; }
-            set { password = value;
+            set 
+            { 
+                password = value;
                 OnPropertyChanged("Password");
             }
         }
@@ -94,7 +108,8 @@ namespace motoStore.Entities
         public string Salary
         {
             get { return salary; }
-            set { salary = value;
+            set {
+                salary = value;
                 OnPropertyChanged("Salary");
             }
         }
@@ -131,7 +146,7 @@ namespace motoStore.Entities
                 OnPropertyChanged("Employee_list");
             }
         }
-        private void EmployeeModel_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        private void Employee_EModel_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             OnPropertyChanged("Employee_list");
         }

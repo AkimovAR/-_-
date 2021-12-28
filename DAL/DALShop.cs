@@ -65,7 +65,10 @@ namespace motoStore.DAL
             try
             {
                 Bikeshop shop = context.Bikeshops.FirstOrDefault(n => n.Id == model.Id);
-                shop = model;
+                shop.Id = model.Id;
+                shop.Address = model.Address;
+                shop.Phone_number = model.Phone_number;
+                shop.Motoshop_name = model.Motoshop_name;
                 context.SaveChanges();
                 return true;
             }

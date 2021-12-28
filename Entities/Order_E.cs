@@ -1,4 +1,5 @@
-﻿using System;
+﻿using motoStore.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace motoStore.Entities
 {
-    class Order_E : E_Notifier
+    class Order_E : Notify
     {
         private int id;
         public int Id
@@ -38,14 +39,7 @@ namespace motoStore.Entities
                 OnPropertyChanged("Order_price");
             }
         }
-        private int stock_code;
-        public int Stock_code
-        {
-            get { return stock_code; }
-            set { stock_code = value;
-                OnPropertyChanged("Stock_code");
-            }
-        }
+       
         private int bike_code;
         public int Bike_code
         {
@@ -56,11 +50,34 @@ namespace motoStore.Entities
                 OnPropertyChanged("Bike_code");
             }
         }
+        private string bike_name;
+        public string Bike_name
+        {
+            get
+            {
+                return bike_name;
+            }
+            set
+            {
+                bike_name = value;
+                OnPropertyChanged("Bike_name");
+            }
+        }
         private int employee_code;
         public int Employee_code
         {
             get { return employee_code; }
             set { employee_code = value; OnPropertyChanged("Employee_code"); }
+        }
+        private string employee_name;
+        public string Employee_name
+        {
+            get { return employee_name; }
+            set
+            {
+                employee_name = value;
+                OnPropertyChanged("Employee_name");
+            }
         }
         private int client_code;
         public int Client_code
@@ -70,6 +87,29 @@ namespace motoStore.Entities
             {
                 client_code = value;
                 OnPropertyChanged("Client_code");
+            }
+        }
+        private string client_name;
+        public string Client_name
+        {
+            get { return client_name; }
+            set
+            {
+                client_name = value;
+                OnPropertyChanged("Client_name"); ;
+            }
+        }
+        private string stock_name;
+        public string Sock_name
+        {
+            get
+            {
+                return stock_name;
+            }
+            set
+            {
+                stock_name = value;
+                OnPropertyChanged("Stock_name");
             }
         }
         private ObservableCollection<Order_E> order_list;

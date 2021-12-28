@@ -66,9 +66,19 @@ namespace motoStore.DAL
         public bool Edit(Bike model)
         {
             try
-            {
-                Bike bike = context.Bikes.FirstOrDefault(n => n.Id == model.Id);
-                bike = model;
+            { 
+                   Bike bike = context.Bikes.FirstOrDefault(n => n.Id == model.Id);
+                   bike.Id = model.Id;
+                   bike.Brand_name = model.Brand_name;
+                   bike.Max_speed = model.Max_speed;
+                   bike.Model_name = model.Model_name;
+                   bike.Power = model.Power;
+                   bike.Price = model.Price;
+                   bike.Torque = model.Torque;
+                   bike.Transmis_type = model.Transmis_type;
+                   bike.Color_name = model.Color_name;
+                   bike.Complectation_name = model.Complectation_name;
+                   bike.Availability = model.Availability;
                 context.SaveChanges();
                 return true;
             }

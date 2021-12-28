@@ -1,10 +1,10 @@
-﻿using motoStore.Entities;
+﻿using motoStore.ViewModels;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace motoStore.Models
+namespace motoStore.Entities
 {
-    class Bike_E : E_Notifier
+    class Bike_E : Notify
     {
         private int id;
         public int Id

@@ -64,7 +64,13 @@ namespace motoStore.DAL
             try
             {
                 Client client = context.Clients.FirstOrDefault(n => n.Id == model.Id);
-                client = model;
+                client.Id = model.Id;
+                client.Surname = model.Surname;
+                client.Cliaddress = model.Cliaddress;
+                client.Clipassport = model.Clipassport;
+                client.Cliphonenumber = model.Cliphonenumber;
+                client.Clidiscount = model.Clidiscount;
+                client.Name = model.Name;
                 context.SaveChanges();
                 return true;
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using motoStore.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace motoStore.Entities
 {
-    class Bikeshop_E : E_Notifier
+    class Bikeshop_E : Notify
     {
        private int id;
        private string motoshop_name;

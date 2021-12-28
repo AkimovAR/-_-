@@ -13,13 +13,12 @@ namespace motoStore.DAL
         public MotoContext()
           : base("moto")
         {  }
-        public virtual DbSet<Bike> Bikes { get; set; }
-        public  DbSet<Bikeshop> Bikeshops { get; set; }
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<Stock> Stocks { get; set; }
-        public DbSet<Discount> Discounts { get; set; }
-
-    }
-}
+        public  virtual  DbSet<Bike> Bikes { get; set; }
+        public  virtual  DbSet<Bikeshop> Bikeshops { get; set; }
+        public  virtual DbSet<Client> Clients { get; set; }
+        public  virtual DbSet<Employee> Employees { get; set; }
+        public  virtual DbSet<Order> Orders { get; set; }
+        public  virtual DbSet<Discount> Discounts { get; set; }
+                
+    }           
+}               
