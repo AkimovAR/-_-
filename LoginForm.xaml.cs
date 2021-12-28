@@ -24,9 +24,11 @@ namespace motoStore
             InitializeComponent();
         }
 
-        private void btnInput_Click(object sender, RoutedEventArgs e)
+      
+
+        private void btnInput_Click_1(object sender, RoutedEventArgs e)
         {
-            if(txtLogin.Text=="admin"&& txtPassword.Text == "admin")
+            if (txtLogin.Text == "admin" && txtPassword.Text == "admin")
             {
                 MainWindow mainWindow = new MainWindow(1);
                 this.Hide();
@@ -41,13 +43,11 @@ namespace motoStore
                 mainWindow.ShowDialog();
                 this.Close();
             }
-           
-
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
+        private void btnClose_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

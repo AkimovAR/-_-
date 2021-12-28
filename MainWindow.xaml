@@ -11,12 +11,11 @@
         <ImageBrush ImageSource="Images\back.png"/>
     </Window.Background>
     <Grid>
-        <Button x:Name="btnBikes" Content="Мотоциклы" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top" Click="btnBikes_Click" RenderTransformOrigin="2.204,5.787"/>
-        <Button x:Name="btnBikeShops" Content="Магазины" HorizontalAlignment="Left" Margin="117,10,0,0" VerticalAlignment="Top" Click="btnBikeShops_Click" />
-        <Button x:Name="btnEmployees" Content="Сотрудники" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="btnEmployees_Click" />
-        <Button x:Name="btnDiscount" Content="Скидки" HorizontalAlignment="Left" Margin="331,10,0,0" VerticalAlignment="Top" Click="btnDiscount_Click" RenderTransformOrigin="2.204,5.787"/>
-        <Button x:Name="btnOrders" Content="Заказы" HorizontalAlignment="Left" Margin="412,10,0,0" VerticalAlignment="Top" Click="btnOrders_Click" RenderTransformOrigin="2.204,5.787"/>
-        <Button x:Name="btnClients" Content="Клиенты" HorizontalAlignment="Left" Margin="569,10,0,0" VerticalAlignment="Top" Click="btnClients_Click" RenderTransformOrigin="2.204,5.787"/>
-        <Button x:Name="btnStocks" Content="Запчсти" HorizontalAlignment="Left" Margin="498,10,0,0" VerticalAlignment="Top" Click="btnStocks_Click" RenderTransformOrigin="2.204,5.787"/>
+        <Button x:Name="btnBikes" Content="Мотоциклы" Command="{Binding BikesCommand}" HorizontalAlignment="Left" Margin="218,10,0,0" VerticalAlignment="Top"  RenderTransformOrigin="2.204,5.787"/>
+        <Button x:Name="btnBikeShops" Content="Магазины" Command="{Binding ShopCommand}" HorizontalAlignment="Left" Margin="117,10,0,0" VerticalAlignment="Top"  />
+        <Button x:Name="btnEmployees" Command="{Binding EmployeeCommand}" Content="Сотрудники" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"  />
+        <Button Command="{Binding DiscountCommand}" Content="Скидки" HorizontalAlignment="Left" Margin="331,10,0,0" VerticalAlignment="Top"  RenderTransformOrigin="2.204,5.787"/>
+        <Button Command="{Binding OrderCommand}" Content="Заказы" HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top"  RenderTransformOrigin="2.204,5.787"/>
+        <Button Command="{Binding ClientCommand}" Content="Клиенты" HorizontalAlignment="Left" Margin="569,10,0,0" VerticalAlignment="Top"  RenderTransformOrigin="2.204,5.787"/>
     </Grid>
 </Window>
