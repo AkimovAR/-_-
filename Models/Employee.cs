@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace motoStore.Models
 {
-    class Employee
+    public partial class Employee
     {
         public int Id { get; set; }
         public string Name { get; set; }
