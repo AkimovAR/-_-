@@ -1,5 +1,4 @@
 ﻿using motoStore.DAL;
-using motoStore.Entities;
 using motoStore.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Windows.Input;
 
 namespace motoStore.ViewModels
 {
-    class VM_GetShop : Notify
+    class VM_GetEmployee : Notify
     {
         private ICommand choosecmd;
 
@@ -19,47 +18,46 @@ namespace motoStore.ViewModels
         {
             get
             {
-                if(choosecmd == null)
+                if (choosecmd == null)
                 {
                     choosecmd = new RelCommand(param => Choose((int)param), null);
                 }
                 return choosecmd;
             }
         }
-        DALShop dal;
-        public VM_GetShop()
+        DALEmployee dal;
+        public VM_GetEmployee()
         {
-            dal = new DALShop();
-            Bikeshops = dal.ShowALL();
+            dal = new DALEmployee();
+            Employees = dal.ShowALL();
         }
-        private int shop_id;
-        public int Shop_id
+        private int id;
+        public int Id
         {
-            get { return shop_id; }
+            get { return id; }
             set
             {
-                shop_id = value;
-                OnPropertyChanged("Shop_id");
+                id = value;
+                OnPropertyChanged("Id");
             }
         }
-        private List<Bikeshop> bikeShops;
-        public List<Bikeshop> Bikeshops
+        private List<Employee> employees;
+        public List<Employee> Employees
         {
             get
             {
-                return bikeShops;
+                return employees;
             }
             set
             {
-                bikeShops = value;
-                OnPropertyChanged("Bike_shops");
+                employees = value;
+                OnPropertyChanged("Employees");
             }
         }
         public void Choose(int id)
         {
-            Shop_id = id;
-            MessageBox.Show("Магазин выбран");
+            Id = id;
+            MessageBox.Show("Сотрудник выбран");
         }
-
     }
 }

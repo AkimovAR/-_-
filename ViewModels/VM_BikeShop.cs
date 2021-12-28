@@ -101,6 +101,7 @@ namespace motoStore.ViewModels
 		{
 			EditShop editShop = new EditShop(id);
 			editShop.ShowDialog();
+			Refresh();
 		}
 		public ICommand ListBikeWinCommand
 		{
@@ -123,6 +124,14 @@ namespace motoStore.ViewModels
 			bikeShop = new Bikeshop();
 			dal = new DALShop();
 			entity = new Bikeshop_E();
+			Refresh();
+		}
+		public VM_BikeShop(int id)
+		{
+			bikeShop = new Bikeshop();
+			dal = new DALShop();
+			entity = new Bikeshop_E();
+			Edit(id);
 			Refresh();
 		}
 
@@ -201,7 +210,14 @@ namespace motoStore.ViewModels
 
 		public void Refresh()
 		{
+            if (entity.Bikeshop_list == null)
+            {
 			entity.Bikeshop_list = new ObservableCollection<Bikeshop_E>();
+            }
+            else
+            {
+				entity.Bikeshop_list.Clear();
+            }
 			if (dal.ShowALL().Count > 0)
 			{
 				dal.ShowALL().ForEach(data => entity.Bikeshop_list.Add(new Bikeshop_E()

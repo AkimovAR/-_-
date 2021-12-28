@@ -7,50 +7,24 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
 namespace motoStore.ViewModels
 {
-    class VM_Employee : E_Notifier
+    class VM_Employee
     {
 		private ICommand saveC;
-		private ICommand resetC;
+        private ICommand resetC;
 		private ICommand editC;
 		private ICommand deleteC;
-		private ICommand listWin;
-		private ICommand editWin;
-		private ICommand addWin;
 		private ICommand choose_shop;
 		private DALEmployee dal;
 		private DALShop dALShop;
-		private Employee employee = null;
-		public Employee_E entity { get; set; }
-		private string shopname;
-		public string ShopName
-        {
-            get { return shopname; }
-            set
-            {
-				shopname = value;
-				OnPropertyChanged("ShopName");
-            }
-        }
-		private int shopcode;
-		public int ShopCode
-		{
-			get { return shopcode; }
-			set
-			{
-				shopcode = value;
-				OnPropertyChanged("ShopCode");
-			}
-		}
-		public ICommand SelectShopCommand
+        private Employee employee;
+		
+        public Employee_E Entity { get; set; }
+        public ICommand SelectShopCommand
         {
             get
 			{
@@ -65,13 +39,13 @@ namespace motoStore.ViewModels
 			get
 			{
 				if (resetC == null)
-					resetC = new RelCommand(param => Reset(), null);
+					resetC = new RelCommand(param => Test(), null);
 
 				return resetC;
 			}
 		}
 
-		public ICommand SaveCommand
+        public ICommand SaveCommand
 		{
 			get
 			{
@@ -104,92 +78,31 @@ namespace motoStore.ViewModels
 			}
 		}
 
-		public ICommand AddWinCommand
-		{
-			get
-			{
-				if (addWin == null)
-					addWin = new RelCommand(param => AddWin(), null);
-
-				return addWin;
-			}
-		}
-		
 	
-
-		
-		public void AddWin()
-		{
-			AddEmployee win = new AddEmployee();
-			win.ShowDialog();
-			Refresh();
-		}
-
-		public ICommand EditWinCommand
-		{
-			get
-			{
-				if (editWin == null)
-					editWin = new RelCommand(param => EditWin((int)param), null);
-
-				return editWin;
-			}
-		}
-		public void EditWin(int id)
-		{
-			EditEmployee win = new EditEmployee(id);
-			win.ShowDialog();
-			Refresh();
-
-		}
-		public ICommand ListWinCommand
-		{
-			get
-			{
-				if (listWin == null)
-					listWin = new RelCommand(param => ListWin(), null);
-
-				return listWin;
-			}
-		}
-		public void ListWin()
-		{
-			ListEmployee win = new ListEmployee();
-			win.ShowDialog();
-		}
-
 		public VM_Employee()
 		{
 			employee = new Employee();
 			dal = new DALEmployee();
 			dALShop = new DALShop();
-			entity = new Employee_E();
+			Entity = new Employee_E();
 			Refresh();
 		}
-		public VM_Employee(int id)
-		{
-			employee = new Employee();
-			dal = new DALEmployee();
-			entity = new Employee_E();
-			dALShop = new DALShop();
-			Edit(id);
-			Refresh();
-		}
+	
 
 		public void Reset()
 		{
-			entity.Id = 0;
-			entity.Account = "";
-			entity.Email = "";
-			entity.Empaddress = "";
-			entity.Emppassport = "";
-			entity.Empphonenumber = "";
-			entity.Motoshop_code = 0;
-			entity.Name = "";
-			entity.Motoshop_name = "";
-			entity.Password = "";
-			entity.Post = "";
-			entity.Salary = "";
+			Entity.Id = 0;
+			Entity.Account = "";
+			Entity.Email = "";
+			Entity.Empaddress = "";
+			Entity.Emppassport = "";
+			Entity.Empphonenumber = "";
+			Entity.Motoshop_code = 0;
+			Entity.Name = "";
+			Entity.Motoshop_name = "";
+			Entity.Password = "";
+			Entity.Post = "";
+			Entity.Salary = "";
 		}
 
 		public void Delete(int id)
@@ -215,30 +128,30 @@ namespace motoStore.ViewModels
 
 		public void Save()
 		{
-			if (entity != null)
+			if (Entity != null)
 			{
-				employee.Id =entity.Id;
-				employee.Motoshop_code =entity.Motoshop_code;
-				employee.Name =entity.Name;
-				employee.Password =entity.Password;
-				employee.Post =entity.Post;
-				employee.Salary =entity.Salary;
-				employee.Surname =entity.Surname;
-				employee.Account =entity.Account;
-				employee.Email =entity.Email;
-				employee.Empaddress =entity.Empaddress;
-				employee.Emppassport =entity.Emppassport;
-				employee.Empphonenumber = entity.Empphonenumber;
+				employee.Id = Entity.Id;
+				employee.Motoshop_code = Entity.Motoshop_code;
+				employee.Name = Entity.Name;
+				employee.Password = Entity.Password;
+				employee.Post = Entity.Post;
+				employee.Salary = Entity.Salary;
+				employee.Surname = Entity.Surname;
+				employee.Account = Entity.Account;
+				employee.Email = Entity.Email;
+				employee.Empaddress = Entity.Empaddress;
+				employee.Emppassport = Entity.Emppassport;
+				employee.Empphonenumber = Entity.Empphonenumber;
 				try
 				{
-					if (entity.Id <= 0)
+					if (Entity.Id <= 0)
 					{
 						dal.Add(employee);
 						MessageBox.Show("Запись успешно добавлено в бд");
 					}
 					else
 					{
-						employee.Id = entity.Id;
+						employee.Id = Entity.Id;
 						dal.Edit(employee);
 						MessageBox.Show("Запись успешно обновлена");
 					}
@@ -257,36 +170,44 @@ namespace motoStore.ViewModels
 
 		public void Edit(int id)
 		{
+
 			List<Bikeshop> bikeshops = dALShop.ShowALL();
 			var model = dal.Show(id);
-			entity.Id = model.Id;
-			entity.Motoshop_code = model.Motoshop_code;
+
+			Entity.Id = model.Id;
+			Entity.Motoshop_code = model.Motoshop_code;
 			Bikeshop bikeshop = bikeshops.FirstOrDefault(n => n.Id == model.Motoshop_code);
 			if (bikeshop != null)
-				entity.Motoshop_name = bikeshop.Motoshop_name;
-			entity.Name = model.Name;
-			entity.Password= model.Password;
-			entity.Post = model.Post;
-			entity.Salary= model.Salary;
-			entity.Surname= model.Surname;
-			entity.Account= model.Account;
-			entity.Email= model.Email;
-			entity.Empaddress= model.Empaddress;
-			entity.Emppassport= model.Emppassport;
-			entity.Empphonenumber= model.Empphonenumber;
+            {
+			  Entity.Motoshop_name = bikeshop.Motoshop_name;
+            }
+			Entity.Name = model.Name;
+			Entity.Password = model.Password;
+			Entity.Post = model.Post;
+			Entity.Salary = model.Salary;
+			Entity.Surname = model.Surname;
+			Entity.Account = model.Account;
+			Entity.Email = model.Email;
+			Entity.Empaddress = model.Empaddress;
+			Entity.Emppassport = model.Emppassport;
+			Entity.Empphonenumber = model.Empphonenumber;
 		}
+		public void Test()
+        {
+			MessageBox.Show(Entity.Name);
+        }
 
 		public void Refresh()
 		{
-
-            if (entity.Employee_list == null)
+            if (Entity.Employee_list == null)
             {
-			entity.Employee_list = new ObservableCollection<Employee_E>();
+			Entity.Employee_list = new ObservableCollection<Employee_E>();
             }
             else
             {
-				entity.Employee_list.Clear();
-            }           
+				Entity.Employee_list.Clear();
+
+			}
 			if (dal.ShowALL().Count > 0)
 			{
 				List<Bikeshop> bikeshops = dALShop.ShowALL();
@@ -308,7 +229,7 @@ namespace motoStore.ViewModels
 					employee_E.Empaddress =item.Empaddress;
 					employee_E.Emppassport =item.Emppassport;
 					employee_E.Empphonenumber =item.Empphonenumber;
-					entity.Employee_list.Add(employee_E);
+					Entity.Employee_list.Add(employee_E);
 				}
 				
 			}
@@ -324,10 +245,8 @@ namespace motoStore.ViewModels
 			if (vM_GetShop.Shop_id > 0)
 			{
 				Bikeshop shop = dALShop.ShowALL().FirstOrDefault(n=>n.Id== vM_GetShop.Shop_id);
-				ShopCode = 1;//shop.Id;
-				ShopName = "asfasdfasdf"; //shop.Motoshop_name;	
-                
-							
+				Entity.Motoshop_code = shop.Id;
+				Entity.Motoshop_name =  shop.Motoshop_name;				
 			}
 		}
 	}

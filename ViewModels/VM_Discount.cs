@@ -17,10 +17,8 @@ namespace motoStore.ViewModels
     {
 		private ICommand saveC;
 		private ICommand resetC;
-		private ICommand editC;
 		private ICommand deleteC;
 		private ICommand listWin;
-		private ICommand editWin;
 		private ICommand addWin;
 
 		private DALDiscount dal;
@@ -112,7 +110,7 @@ namespace motoStore.ViewModels
 
 		public void Delete(int id)
 		{
-			if (MessageBox.Show("Подтверждаете удаление записи?", "Bike", MessageBoxButton.YesNo)
+			if (MessageBox.Show("Подтверждаете удаление записи?", "Скидка", MessageBoxButton.YesNo)
 				== MessageBoxResult.Yes)
 			{
 				try
@@ -162,7 +160,14 @@ namespace motoStore.ViewModels
 
 		public void Refresh()
 		{
-			entity.Discount_list = new ObservableCollection<Discount_E>();
+            if (entity.Discount_list == null)
+            {
+		    	entity.Discount_list = new ObservableCollection<Discount_E>();
+            }
+            else
+            {
+				entity.Discount_list.Clear();
+            }
 			if (dal.ShowALL().Count > 0)
 			{
 				dal.ShowALL().ForEach(data => entity.Discount_list.Add(new Discount_E()

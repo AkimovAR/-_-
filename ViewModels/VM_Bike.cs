@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Input;
 using motoStore.DAL;
+using motoStore.Entities;
 using motoStore.Models;
 using motoStore.Views;
 
@@ -97,6 +98,7 @@ namespace motoStore.ViewModels
         {
 			EditBike editBike = new EditBike(id);
 			editBike.ShowDialog();
+			Refresh();
         }
 		public ICommand ListBikeWinCommand
         {
@@ -122,7 +124,15 @@ namespace motoStore.ViewModels
 			Bike_E = new Bike_E();
 			Refresh();
 		}
-
+		public VM_Bike(int id)
+		{
+			bike = new Bike();
+			dBike = new DALBike();
+			var twm = dBike.ShowALL();
+			Bike_E = new Bike_E();
+			Edit(id);
+			Refresh();
+		}
 		public void Reset()
 		{
 			Bike_E.Id = 0;
@@ -221,7 +231,14 @@ namespace motoStore.ViewModels
 
 		public void Refresh()
 		{
+            if (Bike_E.Bike_list == null)
+            {
 			Bike_E.Bike_list = new ObservableCollection<Bike_E>();
+            }
+            else
+            {
+				Bike_E.Bike_list.Clear();
+            }
             if (dBike.ShowALL().Count > 0)
             {
 				dBike.ShowALL().ForEach(data => Bike_E.Bike_list.Add(new Bike_E()

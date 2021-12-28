@@ -1,5 +1,4 @@
 ﻿using motoStore.DAL;
-using motoStore.Entities;
 using motoStore.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +10,7 @@ using System.Windows.Input;
 
 namespace motoStore.ViewModels
 {
-    class VM_GetShop : Notify
+    class VM_GetClient : Notify
     {
         private ICommand choosecmd;
 
@@ -19,47 +18,46 @@ namespace motoStore.ViewModels
         {
             get
             {
-                if(choosecmd == null)
+                if (choosecmd == null)
                 {
                     choosecmd = new RelCommand(param => Choose((int)param), null);
                 }
                 return choosecmd;
             }
         }
-        DALShop dal;
-        public VM_GetShop()
+        DALClient dal;
+        public VM_GetClient()
         {
-            dal = new DALShop();
-            Bikeshops = dal.ShowALL();
+            dal = new DALClient();
+            Clients = dal.ShowALL();
         }
-        private int shop_id;
-        public int Shop_id
+        private int id;
+        public int Id
         {
-            get { return shop_id; }
+            get { return id; }
             set
             {
-                shop_id = value;
-                OnPropertyChanged("Shop_id");
+                id = value;
+                OnPropertyChanged("Id");
             }
         }
-        private List<Bikeshop> bikeShops;
-        public List<Bikeshop> Bikeshops
+        private List<Client> clients;
+        public List<Client> Clients
         {
             get
             {
-                return bikeShops;
+                return clients;
             }
             set
             {
-                bikeShops = value;
-                OnPropertyChanged("Bike_shops");
+                clients = value;
+                OnPropertyChanged("Clients");
             }
         }
         public void Choose(int id)
         {
-            Shop_id = id;
-            MessageBox.Show("Магазин выбран");
+            Id = id;
+            MessageBox.Show("Клиент выбран");
         }
-
     }
 }

@@ -9,7 +9,7 @@
     <Grid Margin="0,0,0,-41">
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black"/>
+                <GradientStop Color="Aqua"/>
                 <GradientStop Color="#FFBF9090" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
@@ -20,41 +20,36 @@
         <Label Content="Тип трансмиссии" Foreground="White" HorizontalAlignment="Left" Margin="397,80,0,0" VerticalAlignment="Top" Width="157"/>
         <Label Content="Доступность" Foreground="White" HorizontalAlignment="Left" Margin="397,120,0,0" VerticalAlignment="Top" Width="157"/>
         <Label Content="Стоимость" Foreground="White" HorizontalAlignment="Left" Margin="397,158,0,0" VerticalAlignment="Top" Width="157"/>
-        <TextBox x:Name="txtMotoBrand" HorizontalAlignment="Left" Height="23" Margin="222,79,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtMotoModel" HorizontalAlignment="Left" Height="23" Margin="222,119,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtMotoColor" HorizontalAlignment="Left" Height="23" Margin="222,158,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtMotoTransmission" HorizontalAlignment="Left" Height="23" Margin="547,80,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtMotoAviable" HorizontalAlignment="Left" Height="23" Margin="547,120,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtMotoPrice" HorizontalAlignment="Left" Height="23" Margin="547,159,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="222,79,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Brand_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMotoModel" HorizontalAlignment="Left" Height="23" Margin="222,119,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Model_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMotoColor" HorizontalAlignment="Left" Height="23" Margin="222,158,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Color_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMotoTransmission" HorizontalAlignment="Left" Height="23" Margin="547,80,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Transmis_type}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMotoAviable" HorizontalAlignment="Left" Height="23" Margin="547,120,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Availability}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMotoPrice" HorizontalAlignment="Left" Height="23" Margin="547,159,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Price}" VerticalAlignment="Top" Width="120" />
         <Label Content="Мощность" Foreground="White" HorizontalAlignment="Left" Margin="72,199,0,0" VerticalAlignment="Top" Width="89"/>
-        <TextBox x:Name="txtMotoPower" HorizontalAlignment="Left" Height="23" Margin="222,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtMotoPower" HorizontalAlignment="Left" Height="23" Margin="222,200,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Power}" VerticalAlignment="Top" Width="120"/>
         <Label Content="Крутящий момент" Foreground="White" HorizontalAlignment="Left" Margin="402,200,0,0" VerticalAlignment="Top" Width="112"/>
-        <TextBox x:Name="txtMotoTorq" HorizontalAlignment="Left" Height="23" Margin="547,200,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
-        <Label Content="Покупатель" Foreground="White" HorizontalAlignment="Left" Margin="56,259,0,0" VerticalAlignment="Top" Width="174"/>
-        <Label Content="Имя" Foreground="White" HorizontalAlignment="Left" Margin="51,299,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.957,0.568"/>
-        <TextBox x:Name="txtclientName" HorizontalAlignment="Left" Margin="98,299,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
-        <Label Content="Фамилия" Foreground="White" HorizontalAlignment="Left" Margin="28,341,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtClientSurname" HorizontalAlignment="Left" Margin="98,345,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
-        <Label Content="Телефон" Foreground="White" HorizontalAlignment="Left" Margin="28,420,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtClientPhone" HorizontalAlignment="Left" Margin="98,424,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
-        <Label Content="Адрес" Foreground="White" HorizontalAlignment="Left" Margin="34,379,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.594,0.002"/>
-        <TextBox x:Name="txtClientAddress" HorizontalAlignment="Left" Margin="100,383,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
-        <Label Content="Имя" Foreground="White" HorizontalAlignment="Left" Margin="262,304,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtEmployeeName" HorizontalAlignment="Left" Margin="313,308,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Фамилия" Foreground="White" HorizontalAlignment="Left" Margin="234,338,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtEmployeeSurname" HorizontalAlignment="Left" Margin="313,342,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Должность" Foreground="White" HorizontalAlignment="Left" Margin="226,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtEmployeePost" HorizontalAlignment="Left" Margin="313,382,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Телефон" Foreground="White" HorizontalAlignment="Left" Margin="239,415,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
-        <TextBox x:Name="txtEmployeePhone" HorizontalAlignment="Left" Margin="313,420,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Продавец" Foreground="White" HorizontalAlignment="Left" Margin="262,259,0,0" VerticalAlignment="Top" Width="174"/>
-        <Label Content="Название магазина" HorizontalAlignment="Left" Margin="468,302,0,0" VerticalAlignment="Top" Width="120" Foreground="#FFF7EFEF"/>
-        <Label Content="Адрес" HorizontalAlignment="Left" Margin="547,351,0,0" VerticalAlignment="Top" Width="56" Foreground="#FFF7EFEF"/>
-        <Label Content="Телефон" HorizontalAlignment="Left" Margin="532,390,0,0" VerticalAlignment="Top" Width="56" Foreground="#FFF7EFEF"/>
-        <TextBox x:Name="txtMotoshop_name" HorizontalAlignment="Left" Height="23" Margin="619,312,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtShopAddress" HorizontalAlignment="Left" Height="23" Margin="619,352,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtShopPhone" HorizontalAlignment="Left" Height="23" Margin="619,391,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Магазин" Foreground="White" HorizontalAlignment="Left" Margin="547,259,0,0" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="txtMotoTorq" HorizontalAlignment="Left" Height="23" Margin="547,200,0,0" TextWrapping="Wrap" Text="{Binding bike_entity.Torque}" VerticalAlignment="Top" Width="120" />
+        <Label Content="Покупатель" Foreground="White" HorizontalAlignment="Left" Margin="158,258,0,0" VerticalAlignment="Top" Width="174"/>
+        <Label Content="Имя" Foreground="White" HorizontalAlignment="Left" Margin="153,298,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.957,0.568"/>
+        <TextBox x:Name="txtclientName" HorizontalAlignment="Left" Margin="200,298,0,0" Text="{Binding client_entity.Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Фамилия" Foreground="White" HorizontalAlignment="Left" Margin="130,340,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtClientSurname" HorizontalAlignment="Left" Margin="200,344,0,0" Text="{Binding client_entity.Surname}" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Телефон" Foreground="White" HorizontalAlignment="Left" Margin="130,419,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtClientPhone" HorizontalAlignment="Left" Margin="200,423,0,0" Text="{Binding client_entity.Cliphonenumber}" TextWrapping="Wrap" VerticalAlignment="Top" Width="74"/>
+        <Label Content="Адрес" Foreground="White" HorizontalAlignment="Left" Margin="136,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.594,0.002"/>
+        <TextBox x:Name="txtClientAddress" HorizontalAlignment="Left" Margin="202,382,0,0" Text="{Binding client_entity.Cliaddress}" TextWrapping="Wrap" VerticalAlignment="Top" Width="72"/>
+        <Label Content="Имя" Foreground="White" HorizontalAlignment="Left" Margin="503,304,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtEmployeeName" HorizontalAlignment="Left" Margin="553,308,0,0" Text="{Binding employee_entity.Name}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Фамилия" Foreground="White" HorizontalAlignment="Left" Margin="475,338,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtEmployeeSurname" HorizontalAlignment="Left" Margin="553,342,0,0" Text="{Binding employee_entity.Surname}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Должность" Foreground="White" HorizontalAlignment="Left" Margin="467,378,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtEmployeePost" HorizontalAlignment="Left" Margin="553,382,0,0" Text="{Binding employee_entity.Post}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Телефон" Foreground="White" HorizontalAlignment="Left" Margin="480,415,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.01,3.482"/>
+        <TextBox x:Name="txtEmployeePhone" HorizontalAlignment="Left" Margin="553,420,0,0" Text="{Binding employee_entity.Empphonenumber}" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Продавец" Foreground="White" HorizontalAlignment="Left" Margin="503,259,0,0" VerticalAlignment="Top" Width="174"/>
+        <TextBox HorizontalAlignment="Left"  Height="23" Margin="633,20,0,0" TextWrapping="Wrap" Text="{Binding entity.Order_price}" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.739,0.359"/>
+        <Label Content="Стоимость покупки" HorizontalAlignment="Left" Margin="496,19,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

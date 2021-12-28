@@ -1,4 +1,5 @@
-﻿using System;
+﻿using motoStore.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,20 +12,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using motoStore.DAL;
 
-using motoStore.Models;
-using motoStore.ViewModels;
-
-namespace motoStore.Views.BikeShop
+namespace motoStore.Views.Order
 {
- 
-    public partial class AddShop : Window
+    /// <summary>
+    /// Interaction logic for SelectClient.xaml
+    /// </summary>
+    public partial class SelectClient : Window
     {
-        public AddShop()
+        public SelectClient()
         {
             InitializeComponent();
-            DataContext = new VM_BikeShop();
+            DataContext = new VM_GetClient();
         }
     }
 }

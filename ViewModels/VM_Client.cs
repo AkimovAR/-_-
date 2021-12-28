@@ -97,6 +97,7 @@ namespace motoStore.ViewModels
 		{
 			EditClient editClient = new EditClient(id);
 			editClient.ShowDialog();
+			Refresh();
 		}
 		public ICommand ListBikeWinCommand
 		{
@@ -120,6 +121,14 @@ namespace motoStore.ViewModels
 			dclient = new DALClient();
 			var clients = dclient.ShowALL();
 			Client_E = new Client_E();
+			Refresh();
+		}
+		public VM_Client(int id)
+		{
+			client = new Client();
+			dclient = new DALClient();
+			Client_E = new Client_E();
+			Edit(id);
 			Refresh();
 		}
 
@@ -206,7 +215,14 @@ namespace motoStore.ViewModels
 
 		public void Refresh()
 		{
-			Client_E.Clients_list = new ObservableCollection<Client_E>();
+            if (Client_E.Clients_list == null)
+            {
+			   Client_E.Clients_list = new ObservableCollection<Client_E>();
+            }
+            else
+            {
+				Client_E.Clients_list.Clear();
+            }
 			if (dclient.ShowALL().Count > 0)
 			{
 				dclient.ShowALL().ForEach(data => Client_E.Clients_list.Add(new Client_E()

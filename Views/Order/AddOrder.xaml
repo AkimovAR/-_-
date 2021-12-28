@@ -7,21 +7,16 @@
         mc:Ignorable="d"
         Title="AddOrder" Height="402" Width="543">
     <Grid Margin="0,0,10,7">
-        <Label Content="Дата заказа" Foreground="Wheat" HorizontalAlignment="Left" Margin="56,40,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="dp" HorizontalAlignment="Left" Margin="181,40,0,0" VerticalAlignment="Top"/>
-        <Label Foreground="White" Content="Мотоцикл" HorizontalAlignment="Left" Margin="56,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,1.801"/>
-        <ComboBox x:Name="cmbBike" HorizontalAlignment="Left" Margin="171,103,0,0" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.428,0.145"/>
-        <Label Content="Клиент" Foreground="White" HorizontalAlignment="Left" Margin="64,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,1.801"/>
-        <ComboBox x:Name="cmbClient" HorizontalAlignment="Left" Margin="171,164,0,0" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.428,0.145"/>
-        <Label Content="Запчсти" Foreground="White" HorizontalAlignment="Left" Margin="64,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,1.801"/>
-        <ComboBox x:Name="cmbStock" HorizontalAlignment="Left" Margin="171,217,0,0" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.428,0.145"/>
-        <Button x:Name="btnCreateOrder" Content="Создать заказ" HorizontalAlignment="Left" Margin="156,327,0,0" VerticalAlignment="Top" Width="96" Click="btnCreateOrder_Click"/>
-        <Button x:Name="btnClose" Content="Закрыть" HorizontalAlignment="Left" Margin="299,327,0,0" VerticalAlignment="Top" Width="96" Click="btnClose_Click"/>
-        <Label Content="Сотрудник" Foreground="White" HorizontalAlignment="Left" Margin="64,258,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,1.801"/>
-        <ComboBox x:Name="cmbEmployee" HorizontalAlignment="Left" Margin="171,255,0,0" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.428,0.145"/>
+        <Label Content="Дата заказа"  HorizontalAlignment="Left" Margin="56,40,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding entity.Order_date}" HorizontalAlignment="Left" Margin="181,40,0,0" VerticalAlignment="Top"/>
+        <Button  Content="Мотоцикл" Command="{Binding SelectBikeCommand}" HorizontalAlignment="Left" Margin="56,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,1.801"/>
+        <TextBlock Text="{Binding entity.Bike_name}" HorizontalAlignment="Left" Margin="171,103,0,0" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.428,0.145" Height="32"/>
+        <Button Content="Клиент" Command="{Binding SelectClientCommand}" HorizontalAlignment="Left" Margin="64,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,1.801"/>
+        <TextBlock Text="{Binding entity.Client_name}" HorizontalAlignment="Left" Margin="171,164,0,0" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.428,0.145" Height="35"/>
+        <Button Command="{Binding SaveCommand}" Content="Создать заказ" HorizontalAlignment="Left" Margin="171,322,0,0" VerticalAlignment="Top" Width="153" />
+        <Button Command="{Binding SelectEmployeeCommand}" Content="Сотрудник"  HorizontalAlignment="Left" Margin="64,227,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.688,1.801"/>
+        <TextBlock  HorizontalAlignment="Left" Margin="181,226,0,0" TextWrapping="Wrap" Text="{Binding entity.Employee_name}" VerticalAlignment="Top" Width="271" Height="24"/>
 
     </Grid>
-    <Window.Background>
-        <ImageBrush ImageSource="\Images\back.png"/>
-    </Window.Background>
+
 </Window>

@@ -6,33 +6,29 @@
         xmlns:local="clr-namespace:motoStore.Views"
         mc:Ignorable="d"
         Title="EditBike" Height="450" Width="800">
-    <Window.Background>
-        <ImageBrush ImageSource="\Images\back.png"/>
-    </Window.Background>
     <Grid>
-        <Label Content="Марка" Foreground="White" HorizontalAlignment="Left" Margin="35,28,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label Content="Модель" Foreground="White" HorizontalAlignment="Left" Margin="35,68,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label Content="Цвет" Foreground="White" HorizontalAlignment="Left" Margin="35,108,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label Content="Комплектация" Foreground="White" HorizontalAlignment="Left" Margin="35,148,0,0" VerticalAlignment="Top" Width="89"/>
-        <Label Content="Максимальная скорость" Foreground="White" HorizontalAlignment="Left" Margin="355,152,0,0" VerticalAlignment="Top" Width="157"/>
-        <Label Content="Тип трансмиссии" Foreground="White" HorizontalAlignment="Left" Margin="360,30,0,0" VerticalAlignment="Top" Width="157"/>
-        <Label Content="Доступность" Foreground="White" HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Width="157"/>
-        <Label Content="Стоимость" Foreground="White" HorizontalAlignment="Left" Margin="360,108,0,0" VerticalAlignment="Top" Width="157"/>
-        <TextBox x:Name="txtBrand" HorizontalAlignment="Left" Height="23" Margin="185,29,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Height="23" Margin="185,69,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtColor" HorizontalAlignment="Left" Height="23" Margin="185,108,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtCompl" HorizontalAlignment="Left" Height="23" Margin="185,149,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtSpeed" HorizontalAlignment="Left" Height="23" Margin="526,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtTransmission" HorizontalAlignment="Left" Height="23" Margin="510,30,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtAviable" HorizontalAlignment="Left" Height="23" Margin="510,70,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="510,109,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txtPrice_TextChanged"/>
-        <Button Content="Сохранить" HorizontalAlignment="Left" Margin="222,365,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59" Click="Button_Click"/>
-        <Button Content="Очистить" HorizontalAlignment="Left" Margin="365,365,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.933,0.59" Click="Button_Click_1"/>
-        <Button Content="Закрыть" HorizontalAlignment="Left" Margin="526,365,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59" Click="Button_Click_2"/>
-        <Label Content="Мощность" Foreground="White" HorizontalAlignment="Left" Margin="35,193,0,0" VerticalAlignment="Top" Width="89"/>
-        <TextBox x:Name="txtPower" HorizontalAlignment="Left" Height="23" Margin="185,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txtPower_TextChanged"/>
-        <Label Content="Крутящий момент" Foreground="White" HorizontalAlignment="Left" Margin="365,194,0,0" VerticalAlignment="Top" Width="112"/>
-        <TextBox x:Name="txtTorq" HorizontalAlignment="Left" Height="23" Margin="510,194,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="txtTorq_TextChanged"/>
+        <Label Content="Марка"  HorizontalAlignment="Left" Margin="35,28,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Модель"  HorizontalAlignment="Left" Margin="35,68,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Цвет"  HorizontalAlignment="Left" Margin="35,108,0,0" VerticalAlignment="Top" Width="56"/>
+        <Label Content="Комплектация"  HorizontalAlignment="Left" Margin="35,148,0,0" VerticalAlignment="Top" Width="89"/>
+        <Label Content="Максимальная скорость"  HorizontalAlignment="Left" Margin="355,152,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Тип трансмиссии"  HorizontalAlignment="Left" Margin="360,30,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Доступность"  HorizontalAlignment="Left" Margin="360,70,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Стоимость"  HorizontalAlignment="Left" Margin="360,108,0,0" VerticalAlignment="Top" Width="157"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="185,29,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Brand_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="185,69,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Model_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="185,108,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Color_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="185,149,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Complectation_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="526,153,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Max_speed}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="510,30,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Transmis_type}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="510,70,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Availability}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="510,109,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Price}" VerticalAlignment="Top" Width="120" />
+        <Button Content="Сохранить" Command="{Binding SaveCommand}"  HorizontalAlignment="Left" Margin="222,365,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59" />
+        <Button Content="Очистить" Command="{Binding ResetCommand}" HorizontalAlignment="Left" Margin="365,365,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.933,0.59" />
+        <Label Content="Мощность"  HorizontalAlignment="Left" Margin="35,193,0,0" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="txtPower" HorizontalAlignment="Left" Height="23" Margin="185,194,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Power}" VerticalAlignment="Top" Width="120" />
+        <Label Content="Крутящий момент"  HorizontalAlignment="Left" Margin="365,194,0,0" VerticalAlignment="Top" Width="112"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="510,194,0,0" TextWrapping="Wrap" Text="{Binding Bike_E.Torque}" VerticalAlignment="Top" Width="120" />
 
     </Grid>
 </Window>

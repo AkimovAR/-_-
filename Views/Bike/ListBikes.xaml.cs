@@ -26,7 +26,6 @@ namespace motoStore.Views
         {
             InitializeComponent();
             DataContext = new VM_Bike();
-
         }
 
      

@@ -6,13 +6,13 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:motoStore.Views.Discount"
         mc:Ignorable="d"
-        Title="AddDiscount" Height="242" Width="317">
-    <Grid Margin="0,0,39,15" Height="169" VerticalAlignment="Bottom">
-        <Label Content="Дата"  HorizontalAlignment="Left" Margin="86,-7,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.345,3.392"/>
-        <DatePicker x:Name="dpDate" HorizontalAlignment="Left" Margin="142,-7,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label Content="Размер скидки" HorizontalAlignment="Left" Margin="49,33,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtSize" HorizontalAlignment="Left" Margin="145,37,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" TextChanged="txtSize_TextChanged" Grid.ColumnSpan="3"/>
-        <Button x:Name="btnAdd" Content="Добавить" HorizontalAlignment="Left" Margin="120,113,0,0" VerticalAlignment="Top" Click="btnAdd_Click" Grid.ColumnSpan="2" Width="72"/>
+        Title="Добавление скидки" Height="247.657" Width="326.429">
+    <Grid Margin="10,0,2,15" Height="152" VerticalAlignment="Bottom">
+        <Label Content="Дата"  HorizontalAlignment="Left" Margin="68,4,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.345,3.392"/>
+        <DatePicker  SelectedDate="{Binding entity.DateDiscount}" HorizontalAlignment="Left" Margin="156,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Размер скидки" HorizontalAlignment="Left" Margin="40,57,0,0" VerticalAlignment="Top"/>
+        <TextBox  HorizontalAlignment="Left" Margin="146,57,0,0" Text="{Binding entity.SizeDiscount}" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" />
+        <Button Command="{Binding SaveCommand}" Content="Добавить" HorizontalAlignment="Left" Margin="74,110,0,0" VerticalAlignment="Top"  Width="110"/>
         <Label Content="Добавление скидки"  HorizontalAlignment="Left" Margin="68,-46,0,0" VerticalAlignment="Top" Width="221" Height="39" FontSize="16" Grid.ColumnSpan="3"/>
     </Grid>
 

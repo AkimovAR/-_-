@@ -5,20 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:motoStore.Views.BikeShop"
         mc:Ignorable="d"
-        Title="EditShop" Height="243" Width="480">
+        Title="EditShop" Height="263.829" Width="495.148">
     <Grid Margin="0,0,27,18">
-        <Button x:Name="Savbtn" Content="Сохранить" HorizontalAlignment="Left" Margin="22,165,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59"  Click="Savbtn_Click"/>
-        <Button x:Name="Clearbtn" Content="Очистить" HorizontalAlignment="Left" Margin="165,165,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.933,0.59"  Click="Clearbtn_Click"/>
-        <Button x:Name="Closebtn" Content="Закрыть" HorizontalAlignment="Left" Margin="326,165,0,0" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.933,0.59"  Click="Closebtn_Click"/>
-        <Label Content="Название магазина" HorizontalAlignment="Left" Margin="108,32,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label Content="Адресс" HorizontalAlignment="Left" Margin="108,72,0,0" VerticalAlignment="Top" Width="56"/>
-        <Label Content="Телефон" HorizontalAlignment="Left" Margin="108,112,0,0" VerticalAlignment="Top" Width="56"/>
-        <TextBox x:Name="txtMotoshop_name" HorizontalAlignment="Left" Height="23" Margin="258,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="23" Margin="258,73,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtPhone_number" HorizontalAlignment="Left" Height="23" Margin="258,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Command="{Binding SaveCommand}" Content="Сохранить" HorizontalAlignment="Left" Margin="68,174,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.933,0.59" />
+        <Button Command="{Binding ResetCommand}" Content="Очистить" HorizontalAlignment="Left" Margin="265,174,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="-0.933,0.59" />
+        <Label Content="Название магазина" HorizontalAlignment="Left" Margin="35,28,0,0" VerticalAlignment="Top" Width="115"/>
+        <Label Content="Адрес" HorizontalAlignment="Left" Margin="94,68,0,0" VerticalAlignment="Top" Width="56" RenderTransformOrigin="0.725,0.448"/>
+        <Label Content="Телефон" HorizontalAlignment="Left" Margin="94,97,0,0" VerticalAlignment="Top" Width="56"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="185,29,0,0" TextWrapping="Wrap" Text="{Binding entity.Motoshop_name}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="185,69,0,0" TextWrapping="Wrap" Text="{Binding entity.Address}" VerticalAlignment="Top" Width="120"/>
+        <TextBox  HorizontalAlignment="Left" Height="23" Margin="185,108,0,0" TextWrapping="Wrap" Text="{Binding entity.Phone_number}" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
-    <Window.Background>
-        <ImageBrush ImageSource="\Images\back.png"/>
-    </Window.Background>
+
 </Window>

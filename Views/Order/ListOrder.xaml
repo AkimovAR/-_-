@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:motoStore.Views.Order"
         mc:Ignorable="d"
-        Title="ListOrder" Height="480" Width="600">
+        Title="ListOrder" Height="489.974" Width="956.571">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20 8 20 8" />
@@ -13,27 +13,29 @@
             <Setter Property="Height" Value="30" />
         </Style>
     </Window.Resources>
-    <Grid HorizontalAlignment="Left" Height="450" Width="600" VerticalAlignment="Top">
-        <DataGrid AutoGenerateColumns="False" x:Name="ordersGrid" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Top" SelectionUnit="FullRow" HorizontalAlignment="Center" Width="600" Margin="0,0,0,10">
+    <Grid HorizontalAlignment="Left" Height="450" Width="947" VerticalAlignment="Top">
+        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding entity.Order_list}" IsReadOnly="True" SelectionMode="Single" VerticalAlignment="Top" SelectionUnit="FullRow" HorizontalAlignment="Center" Width="896" Margin="10,10,41,0" Height="231">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Id}" Header="№" Width="30"/>
                 <DataGridTextColumn Binding="{Binding Order_date}" Header="Дата заказа" Width="70"/>
-                <DataGridTextColumn Binding="{Binding Bike_code}" Header="Товар" Width="70"/>
+                <DataGridTextColumn Binding="{Binding Bike_name}" Header="Мотоцикл" Width="70"/>
                 <DataGridTextColumn Binding="{Binding Order_price}" Header="Стоимость" Width="70"/>
-                <DataGridTextColumn Binding="{Binding Stock_code}" Header="Запчасти" Width="100"/>
-                <DataGridTextColumn Binding="{Binding Employee_code}" Header="Сотрудник" Width="150"/>
-                <DataGridTextColumn Binding="{Binding Client_code}" Header="Клиент" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Employee_name}" Header="Сотрудник" Width="150"/>
+                <DataGridTextColumn Binding="{Binding Client_name}" Header="Клиент" Width="150"/>
+                <DataGridTemplateColumn Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Отчет" CommandParameter="{Binding Path=Id}"
+                                        Command="{Binding Path=DataContext.EditWinCommand,RelativeSource={RelativeSource FindAncestor,
+                                                AncestorType=Window}}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,381,0,0">
-            <Button x:Name="Details" Content="Отчет" Click="Details_Click" />
-            <Button x:Name="AddOrder" Content="Новый заказ" Click="AddOrder_Click" />
-
-
+            <Button Command="{Binding AddWinCommand}" Content="Новый заказ"  />
         </StackPanel>
-
     </Grid>
-    <Window.Background>
-        <ImageBrush ImageSource="\Images\back.png"/>
-    </Window.Background>
+   
 </Window>
